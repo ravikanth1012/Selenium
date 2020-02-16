@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
  
-public class TestScript4 {
+public class Window_Handle_Operations {
 	
 	public static void main(String[] args)
 	{

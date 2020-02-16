@@ -7,15 +7,15 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class Excel_User_Data {
-		
-		public static String readdata(String Sheetname,int Row,int Cell) throws EncryptedDocumentException, InvalidFormatException, IOException
-		{
-			FileInputStream fis = new FileInputStream("C:\\Users\\BOT\\Desktop\\TestData\\CloudApp.xlsx");
+ 
+	public static String readdata(String Sheetname,int Row,int Cell) throws EncryptedDocumentException, InvalidFormatException, IOException
+	{ 
+		FileInputStream fis = new FileInputStream("C:\\Users\\BOT\\Desktop\\TestData\\CloudApp.xlsx");
 
-			Workbook w1= WorkbookFactory.create(fis);
+		Workbook w1= WorkbookFactory.create(fis);
 
-			String s1= w1.getSheet(Sheetname).getRow(Row).getCell(Cell).getStringCellValue();
-			return s1;	
-		}
+		String s1= w1.getSheet(Sheetname).getRow(Row).getCell(Cell).getStringCellValue();
+		return s1;	
+	}
 
 }

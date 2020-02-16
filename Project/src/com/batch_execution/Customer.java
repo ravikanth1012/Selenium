@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import com.final_project.Base_class;
+import com.Final_Project.Base_class;
 
 public class Customer extends Base_class
 {

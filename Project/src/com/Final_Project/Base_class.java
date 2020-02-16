@@ -1,4 +1,4 @@
-package com.final_project;
+package com.Final_Project;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;

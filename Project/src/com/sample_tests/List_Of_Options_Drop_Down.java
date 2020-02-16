@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TestScript2 {
+public class List_Of_Options_Drop_Down {
 
 	public static void main(String[] args) throws InterruptedException
 	{

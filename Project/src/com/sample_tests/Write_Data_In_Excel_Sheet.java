@@ -10,7 +10,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class Write_Excel_Sheet {
+public class Write_Data_In_Excel_Sheet {
 
 	public  static void main(String[] args) throws EncryptedDocumentException, InvalidFormatException, IOException
 	{

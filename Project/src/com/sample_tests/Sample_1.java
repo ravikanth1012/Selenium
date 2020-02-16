@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestScript1 {
+public class Sample_1 {
 
 	public static void main(String[] args) throws InterruptedException
 	{

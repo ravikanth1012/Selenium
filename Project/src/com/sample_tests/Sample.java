@@ -2,7 +2,7 @@ package com.sample_tests;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class example {
+public class Sample {
 	
 	public static void main(String[] args)
 	{

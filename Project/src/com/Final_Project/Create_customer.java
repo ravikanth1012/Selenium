@@ -1,4 +1,4 @@
-package com.final_project;
+package com.Final_Project;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

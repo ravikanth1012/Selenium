@@ -9,13 +9,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 public class Base_Class extends Excel_User_Data 
- 
+
 {
 	public static WebDriver driver;
 
@@ -58,34 +59,43 @@ public class Base_Class extends Excel_User_Data
 		Thread.sleep(4000);
 		String text= driver.findElement(By.xpath("//div[@class= 'flash alert alert-success']")).getText();
 		System.out.println(text);
-		//Assert.assertTrue(text.equals("Welcome back!"));
+		Assert.assertEquals(text,"Welcome back!", "login not successfully");
+
 	}
 
 	@AfterClass
 
 	public void logout() throws InterruptedException
 
-		//		WebElement w1= driver.findElement(By.xpath("//*[@id= 'dropdownMenuLink']"));
-		//		 
-		//		Select s= new Select(w1);
-		//		
-		//		s.selectByVisibleText("Sign out");
-	
-		//		java.util.List<WebElement> myElements = driver.findElements(By.className("dropdown-menu nav-item"));
-		//	       for(WebElement e : myElements) {
-		//	         if(e.getText().equals("Sign out")) 
-		//	         {
-		//	        	 e.click();
-		//	             
-		//	         }
-		{
+	{ 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id= 'dropdownMenuLink']")).click();
 		WebElement w = driver.findElement(By.xpath("//a[@data-testid= 'nav-signout-link']"));
 		Actions s= new Actions(driver);
 		s.click(w);
-		s.perform();	
-	}
+		s.perform();
+		String text1 =driver.findElement(By.xpath("//div[@class='alert alert-success']")).getText();
+		System.out.println(text1);
+		Assert.assertEquals(text1, "Successfully Logged Out","logout not successfully");
+	} 
+	
+
+
+	/*		WebElement w1= driver.findElement(By.xpath("//*[@id= 'dropdownMenuLink']"));
+
+			Select s= new Select(w1);
+
+			s.selectByVisibleText("Sign out");
+
+			java.util.List<WebElement> myElements = driver.findElements(By.className("dropdown-menu nav-item"));
+		       for(WebElement e : myElements) {
+		         if(e.getText().equals("Sign out")) 
+		         {
+		        	 e.click();
+	              }
+
+	 */    
+
 
 	@AfterTest 
 

@@ -2,22 +2,22 @@ package com.CloudApp_Project;
 
 import org.testng.annotations.Test;
 
-public class Main_Test_Case1 extends Base_Class
+public class Sign_Up_Your_Team extends Base_Class
 
 {
 	@Test  
-	
+
 	public void createteam() throws InterruptedException
-	{
-		Create_Team ct= new Create_Team();
+	{ 
+		Create_Team_Objects ct= new Create_Team_Objects();
 		ct.clickcreateteam();
-		Create_Organization_Account co = new Create_Organization_Account();
+		Create_Organization_Objects co = new Create_Organization_Objects();
 		co.create_organization("Organization1");
 		co.click();
 		System.out.println(co.success());
-		co.Email("test.user5@qualitlabs.com");
-		co.submit();
-		co.invite();
+		co.Email("test@automation.com");
+		co.submit(); 
+		Thread.sleep(1000);
 		System.out.println(co.invite());
 		co.done();		
 	}

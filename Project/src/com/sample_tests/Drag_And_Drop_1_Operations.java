@@ -3,7 +3,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TestScript3 {
+public class Drag_And_Drop_1_Operations {
 
 	public static void main(String[] args)
 	{
