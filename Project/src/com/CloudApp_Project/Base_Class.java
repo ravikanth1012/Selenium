@@ -25,7 +25,7 @@ public class Base_Class extends Excel_User_Data
 	{
 		String browser = Excel_User_Data.readdata("Sheet1",1,6);
 		String URL = Excel_User_Data.readdata("Sheet1",1,2);
-		if (browser.equals("Firefox"))
+		if (browser.equals("Chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver","C:\\Automation drivers\\chrome driver\\chromedriver.exe");
 			driver=new ChromeDriver();
@@ -35,6 +35,7 @@ public class Base_Class extends Excel_User_Data
 		{
 			System.setProperty("webdriver.gecko.driver","C:\\Automation drivers\\gecko drivers\\geckodriver.exe");
 			driver=new FirefoxDriver();
+			driver.manage().window().maximize();
 		}
 
 		else 

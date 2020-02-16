@@ -37,7 +37,7 @@ public class TestScript2 {
 		s1.selectByValue("3");
 
 		System.out.println(s1.getOptions().size());//Printing Drop-down options size
-
+ 
 		List<WebElement> s2 = s1.getOptions(); //List of options in Drop-down
 
 	 	for (int i=1;i<=s2.size()-1;i++)
