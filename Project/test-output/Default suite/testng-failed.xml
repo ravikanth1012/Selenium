@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CloudApp_Project.Main_Test_Case1">
+      <class name="com.CloudApp_Project.Sign_Up_Your_Team">
         <methods>
-          <include name="closebrowser"/>
           <include name="createteam"/>
+          <include name="closebrowser"/>
           <include name="Openbrowser"/>
           <include name="login"/>
           <include name="logout"/>
         </methods>
-      </class> <!-- com.CloudApp_Project.Main_Test_Case1 -->
+      </class> <!-- com.CloudApp_Project.Sign_Up_Your_Team -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
