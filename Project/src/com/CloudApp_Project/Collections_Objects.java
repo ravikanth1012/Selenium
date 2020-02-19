@@ -16,9 +16,11 @@ public class Collections_Objects extends Base_Class
 		driver.findElement(By.xpath("//input[@value='Add new Collection']")).click();
 	}
 
-	public void Collection_Click(String Add_Collection)
+	public Void Collection_Click( String Collection_Name)
 	{
-		driver.findElement(By.xpath("//a[@href= 'https://qa.getcloudapp.com/collections/oRf00j/+Add_Collection+]")).click(); 
+		driver.findElement(By.linkText("+Collection_Name+")).click();
+		return null; 
+		
 	}
 
 	public void Delete_Collection()
