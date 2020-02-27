@@ -1,4 +1,4 @@
-package com.CloudApp_Project;
+package object_Repository;
 
 import org.openqa.selenium.By;
 
@@ -16,11 +16,9 @@ public class Collections_Objects extends Base_Class
 		driver.findElement(By.xpath("//input[@value='Add new Collection']")).click();
 	}
 
-	public Void Collection_Click( String Collection_Name)
+	public void Collection_Click( String Collection_Name)
 	{
-		driver.findElement(By.linkText("+Collection_Name+")).click();
-		return null; 
-		
+		driver.findElement(By.linkText(""+ Collection_Name +"")).click(); 
 	}
 
 	public void Delete_Collection()
@@ -29,10 +27,11 @@ public class Collections_Objects extends Base_Class
 	}
 
 	public void Pop_up()
-	{
-		driver.switchTo().alert().accept();
+	{ 
 		String text = driver.switchTo().alert().getText();
 		System.out.println(text);
+		driver.switchTo().alert().accept();
+		
 
 	}
 }

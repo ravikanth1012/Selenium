@@ -1,12 +1,10 @@
-package com.CloudApp_Project;
+package object_Repository;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
 public class Create_Organization_Objects extends Base_Class
 
 {
-
-
+ 
 	public void create_organization( String orgname)
 	{
 

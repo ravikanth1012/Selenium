@@ -1,4 +1,4 @@
-package com.CloudApp_Project;
+package object_Repository;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.apache.poi.EncryptedDocumentException;
@@ -9,11 +9,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
+
+
+import data_Files.Excel_User_Data;
 
 public class Base_Class extends Excel_User_Data 
 
@@ -57,8 +59,8 @@ public class Base_Class extends Excel_User_Data
 		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.name("commit")).click();
 		Thread.sleep(3000);
-		String text= driver.findElement(By.xpath("//div[@class= 'flash alert alert-success']")).getText();
-		System.out.println(text);
+		 String text= driver.findElement(By.xpath("//div[@class= 'flash alert alert-success']")).getText();
+		 System.out.println(text);
 		//Assert.assertEquals(text,"Welcome back!", "login not successfully");
 
 	}
@@ -76,25 +78,8 @@ public class Base_Class extends Excel_User_Data
 		s.perform();
 		String text1 =driver.findElement(By.xpath("//div[@class='alert alert-success']")).getText();
 		System.out.println(text1);
-		Assert.assertEquals(text1, "Successfully Logged Out","logout not successfully");
+		//Assert.assertEquals(text1, "Successfully Logged Out","logout not successfully");
 	} 
-	
-
-
-	/*		WebElement w1= driver.findElement(By.xpath("//*[@id= 'dropdownMenuLink']"));
-
-			Select s= new Select(w1);
-
-			s.selectByVisibleText("Sign out");
-
-			java.util.List<WebElement> myElements = driver.findElements(By.className("dropdown-menu nav-item"));
-		       for(WebElement e : myElements) {
-		         if(e.getText().equals("Sign out")) 
-		         {
-		        	 e.click();
-	              }
-
-	 */    
 
 
 	@AfterTest 

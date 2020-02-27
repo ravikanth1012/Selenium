@@ -16,7 +16,7 @@ public class Drag_And_Drop_1_Operations {
 		cd.manage().window().maximize();// To maximize window
 		
 		//Regisiteration process 
-
+ 
 		cd.findElementByLinkText("REGISTER").click();
 
 		cd.findElementByName("firstName").sendKeys("firstName");

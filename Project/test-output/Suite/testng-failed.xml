@@ -3,15 +3,33 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.batchexecution.Customer">
+      <class name="test_Suite.Rename_Drop">
         <methods>
-          <include name="OpenBrowser"/>
+          <include name="Rename_The_Drop"/>
+          <include name="Openbrowser"/>
           <include name="closebrowser"/>
-          <include name="creationCustomer"/>
           <include name="login"/>
           <include name="logout"/>
         </methods>
-      </class> <!-- com.batchexecution.Customer -->
+      </class> <!-- test_Suite.Rename_Drop -->
+      <class name="test_Suite.Sign_Up_Your_Team">
+        <methods>
+          <include name="createteam"/>
+          <include name="Openbrowser"/>
+          <include name="closebrowser"/>
+          <include name="login"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- test_Suite.Sign_Up_Your_Team -->
+      <class name="test_Suite.Create_Collections">
+        <methods>
+          <include name="Openbrowser"/>
+          <include name="closebrowser"/>
+          <include name="Create_Collection"/>
+          <include name="login"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- test_Suite.Create_Collections -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.CloudApp_Project.Create_Collections">
+      <class name="test_Suite.Rename_Drop">
         <methods>
-          <include name="closebrowser"/>
-          <include name="Create_Collection"/>
+          <include name="Rename_The_Drop"/>
           <include name="Openbrowser"/>
+          <include name="closebrowser"/>
           <include name="login"/>
           <include name="logout"/>
         </methods>
-      </class> <!-- com.CloudApp_Project.Create_Collections -->
+      </class> <!-- test_Suite.Rename_Drop -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
