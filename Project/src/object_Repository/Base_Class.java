@@ -1,4 +1,7 @@
 package object_Repository;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.apache.poi.EncryptedDocumentException;
@@ -13,25 +16,23 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
-
-
 import data_Files.Excel_User_Data;
 
 public class Base_Class extends Excel_User_Data 
-
 {
 	public static WebDriver driver;
 
-	@BeforeTest
-
+	@BeforeTest 
+	
 	public void Openbrowser() throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		String browser = Excel_User_Data.readdata("Sheet1",1,6);
-		String URL = Excel_User_Data.readdata("Sheet1",1,2);
+		String browser = Excel_User_Data.readData("Sheet1",1,6);
+		String URL = Excel_User_Data.readData("Sheet1",1,2);
 		if (browser.equals("Chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver","C:\\Automation drivers\\chrome driver\\chromedriver.exe");
 			driver=new ChromeDriver();
+			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
 			driver.manage().window().maximize();
 		}
 		else if(browser.equals("Firefox"))
@@ -40,7 +41,6 @@ public class Base_Class extends Excel_User_Data
 			driver=new FirefoxDriver();
 			driver.manage().window().maximize();
 		}
-
 		else 
 		{ 
 			System.out.println("invalid data");
@@ -52,16 +52,18 @@ public class Base_Class extends Excel_User_Data
 
 	public void login() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
 	{
-		String username = Excel_User_Data.readdata("Sheet1",1,3);
-		String password = Excel_User_Data.readdata("Sheet1",1,4);
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		String username = Excel_User_Data.readData("Sheet1",1,3);
+		String password = Excel_User_Data.readData("Sheet1",1,4);
 		driver.findElement(By.id("email")).sendKeys(username);
 		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.name("commit")).click();
-		Thread.sleep(3000);
-		 String text= driver.findElement(By.xpath("//div[@class= 'flash alert alert-success']")).getText();
-		 System.out.println(text);
-		//Assert.assertEquals(text,"Welcome back!", "login not successfully");
+		String Tittle = driver.getTitle();
+		System.out.println(Tittle);
+		assertTrue(driver.getTitle().contains("CloudApp"));
+		//fluent waits
+		String text= driver.findElement(By.xpath("//div[@class= 'flash alert alert-success']")).getText();
+		System.out.println(text);
+		assertEquals(text,"Welcome back!", "login not successfully");
 
 	}
 

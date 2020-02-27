@@ -31,7 +31,6 @@ public class Collections_Objects extends Base_Class
 		String text = driver.switchTo().alert().getText();
 		System.out.println(text);
 		driver.switchTo().alert().accept();
-		
-
+	
 	}
 }
