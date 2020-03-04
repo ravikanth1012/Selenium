@@ -14,7 +14,7 @@ public class Excel_User_Data {
 
 	public static String readData(String Sheetname,int Row,int Cell) throws EncryptedDocumentException, InvalidFormatException, IOException
 	{ 
-		FileInputStream fis = new FileInputStream("C:\\Users\\abcd\\Desktop\\TestData\\CloudApp.xlsx");
+		FileInputStream fis = new FileInputStream("C:\\Users\\abcd\\Desktop\\Selenium\\Selenium\\Project\\CloudApp.xlsx");
 
 		Workbook w1= WorkbookFactory.create(fis);
 
@@ -33,7 +33,7 @@ public class Excel_User_Data {
 		org.apache.poi.ss.usermodel.Row s3=s2.getRow(Row);
 		org.apache.poi.ss.usermodel.Cell s4=s3.createCell(Cell);
 		s4.setCellValue(Data);
-		FileOutputStream sec= new FileOutputStream("C:\\Users\\abcd\\Desktop\\TestData\\CloudApp.xlsx");
+		FileOutputStream sec= new FileOutputStream("C:\\Users\\abcd\\Desktop\\Selenium\\Selenium\\Project\\CloudApp.xlsx");
 		w2.write(sec);	
 	}
 

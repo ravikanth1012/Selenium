@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test_Cases.Rename_Drop">
+      <class name="test_Cases.Create_Collections">
         <methods>
           <include name="Openbrowser"/>
           <include name="closebrowser"/>
+          <include name="Create_Collection"/>
           <include name="login"/>
           <include name="logout"/>
-          <include name="Rename_The_Drop"/>
         </methods>
-      </class> <!-- test_Cases.Rename_Drop -->
+      </class> <!-- test_Cases.Create_Collections -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
