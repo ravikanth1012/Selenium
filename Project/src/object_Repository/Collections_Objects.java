@@ -1,24 +1,32 @@
 package object_Repository;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 public class Collections_Objects extends Base_Class
 
-{		
+{	
+	public void Add_collecction_button() 
+	{
+		
+		driver.findElement(By.xpath("//a[@id= 'add-collection-button']")).click();
+	} 
+
 	public String Add_New_Collection(String Collection_Name)
 	{
-		driver.findElement(By.id("name")).sendKeys(Collection_Name);
+		driver.findElement(By.id("collection-name")).sendKeys(Collection_Name);
 		return Collection_Name;
-
 	}
-	public void Add_New_Collection_Button()
+
+	public void Enter()
 	{
-		driver.findElement(By.xpath("//input[@value='Add new Collection']")).click();
+		driver.findElement(By.id("collection-name")).sendKeys(Keys.ENTER);
 	}
-
+	
 	public void Collection_Click( String Collection_Name)
 	{
-		driver.findElement(By.linkText(""+ Collection_Name +"")).click(); 
+		driver.findElement(By.xpath("//a[@title= '"+ Collection_Name +"']")).click();
+		
 	}
 
 	public void Delete_Collection()
