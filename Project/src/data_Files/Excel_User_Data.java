@@ -14,7 +14,7 @@ public class Excel_User_Data {
 
 	public static String readData(String Sheetname,int Row,int Cell) throws EncryptedDocumentException, InvalidFormatException, IOException
 	{ 
-		FileInputStream fis = new FileInputStream("C:\\Users\\abcd\\Desktop\\Selenium\\Selenium\\Project\\CloudApp.xlsx");
+		FileInputStream fis = new FileInputStream("C:\\Users\\abcd\\Desktop\\Selenium\\Selenium\\Project\\src\\data_Files\\Test_Data.xlsx");
 
 		Workbook w1= WorkbookFactory.create(fis);
 
@@ -26,14 +26,14 @@ public class Excel_User_Data {
 
 	public static void writeDate(String Sheetname,int Row,int Cell,String Data) throws EncryptedDocumentException, InvalidFormatException, IOException
 	{
-		FileInputStream fis2 = new FileInputStream("C:\\Users\\abcd\\Desktop\\TestData\\CloudApp.xlsx");
+		FileInputStream fis2 = new FileInputStream("C:\\Users\\abcd\\Desktop\\Selenium\\Selenium\\Project\\src\\data_Files\\Test_Data.xlsx");
 
 		Workbook w2= WorkbookFactory.create(fis2);
-		Sheet s2=w2.getSheet(Sheetname);
+		Sheet s2=w2.getSheet(Sheetname); 
 		org.apache.poi.ss.usermodel.Row s3=s2.getRow(Row);
 		org.apache.poi.ss.usermodel.Cell s4=s3.createCell(Cell);
 		s4.setCellValue(Data);
-		FileOutputStream sec= new FileOutputStream("C:\\Users\\abcd\\Desktop\\Selenium\\Selenium\\Project\\CloudApp.xlsx");
+		FileOutputStream sec= new FileOutputStream("C:\\Users\\abcd\\Desktop\\Selenium\\Selenium\\Project\\src\\data_Files\\Test_Data.xlsx");
 		w2.write(sec);	
 	}
 

@@ -13,9 +13,10 @@ public class Create_Collections extends Base_Class
 	public void Create_Collection() throws InterruptedException
 	{
 		Collections_Objects collect = new Collections_Objects();
-		 String text = collect.Add_New_Collection("collection29");
+		collect.Add_collecction_button();
+		 String text = collect.Add_New_Collection("collection30");
+		 collect.Enter();
 		 System.out.println(text);
-		collect.Add_New_Collection_Button();
 		collect.Collection_Click(text);
 		collect.Delete_Collection();
 		collect.Pop_up();

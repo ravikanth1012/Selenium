@@ -10,8 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -21,7 +19,7 @@ import data_Files.Excel_User_Data;
 public class Base_Class extends Excel_User_Data 
 {
 	public static WebDriver driver;
-
+ 
 
 	@BeforeTest 
 
@@ -58,15 +56,15 @@ public class Base_Class extends Excel_User_Data
 		driver.findElement(By.id("email")).sendKeys(username);
 		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.name("commit")).click();
-		WebDriverWait wait = new WebDriverWait(driver,30);	
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@data-testid='cloudapp-logo']")));
+		//WebDriverWait wait = new WebDriverWait(driver,30);	
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@data-testid='cloudapp-logo']")));
 		String text= driver.findElement(By.xpath("//div[@class= 'flash alert alert-success']")).getText();
 		System.out.println(text);
 		String Tittle = driver.getTitle();
 		System.out.println(Tittle);
 		assertTrue(driver.getTitle().contains("CloudApp"));
 		//assertEquals(text,"Welcome back!", "login not successfully");
-
+ 
 	}
 
 	@AfterClass
@@ -75,7 +73,7 @@ public class Base_Class extends Excel_User_Data
 
 	{ 
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id= 'dropdownMenuLink']")).click();
+		driver.findElement(By.xpath("//a[@id= 'dropdownMenuLink'][2]")).click();
 		WebElement w = driver.findElement(By.xpath("//a[@data-testid= 'nav-signout-link']"));
 		Actions s= new Actions(driver);
 		s.click(w);
